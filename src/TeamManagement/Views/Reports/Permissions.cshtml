@@ -1,0 +1,46 @@
+﻿@model IEnumerable<EmployeeRoleViewModel >
+
+@{ ViewBag.Title = "Reports";}
+
+<div class="row">
+    <div class="col-md-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active" aria-current="page">Employee Permissions List</li>
+                    </ol>
+                </nav> <br /><br />
+                <div class="row">
+                    <div class="col-md-12 table-responsive-md">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Employee No.</th>
+                                    <th>Name</th>
+                                    <th>Role</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            <a asp-controller="Employee" asp-action="Detail" asp-route-id="@item.Id">
+                                                @item.EmployeeNo
+                                            </a>
+                                        </td>
+                                        <td>@item.Name</td>
+                                        <td>
+                                            @item.Role
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<TerminatedEmployeesViewModel>
+
+@{ ViewBag.Title = "Terminated Employees Report";}
+
+<div class="row">
+    <div class="col-md-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active" aria-current="page">Terminated Emplopyess Report</li>
+                    </ol>
+                </nav> <br /><br />
+                <div class="row">
+                    <div class="col-md-12 table-responsive-md">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Terminated Year</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+
+                                        <td>@item.TerminatedYear</td>
+                                        <td>
+                                            @item.Total
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

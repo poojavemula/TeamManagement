@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ActivityDetailsViewModel>
+
+@{ ViewBag.Title = "Activity Details";}
+
+<div class="row">
+    <div class="col-md-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active" aria-current="page">Update Activity Report</li>
+                    </ol>
+                </nav> <br /><br />
+                <div class="row">
+                    <div class="col-md-12 table-responsive-md">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Employee No</th>
+                                    <th>Property Name</th>
+                                    <th>Previous Value</th>
+                                    <th>New Value</th>
+                                    <th>ModifiedDate</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                <tr>
+
+                                    <td>@item.EmployeeNo</td>
+                                    <td>@item.PropertyName</td>
+                                    <td>@item.PreviousValue</td>
+                                    <td>@item.NewValue</td>
+                                    <td>@item.ModifiedDateTime</td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
