@@ -73,6 +73,7 @@ namespace TeamManagement.Controllers
 
 
         [HttpGet]
+        [HttpPost]
         public IActionResult ActivityReport(string empNo = null)
         {
             IEnumerable<ActivityDetailsViewModel> data = new List<ActivityDetailsViewModel>();
@@ -103,7 +104,7 @@ namespace TeamManagement.Controllers
                         ModifiedDateTime = y.ModifiedDateTime
                     });
             }
-
+            ViewData["empNo"] = empNo;
 
             return View(data);
 

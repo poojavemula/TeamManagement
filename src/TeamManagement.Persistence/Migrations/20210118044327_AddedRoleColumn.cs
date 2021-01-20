@@ -6,8 +6,7 @@ namespace TeamManagement.Persistence.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "EmployeeRoles");
+            
 
             migrationBuilder.AddColumn<int>(
                 name: "Role",
@@ -23,19 +22,7 @@ namespace TeamManagement.Persistence.Migrations
                 name: "Role",
                 table: "Employees");
 
-            migrationBuilder.CreateTable(
-                name: "EmployeeRoles",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    EmployeeNo = table.Column<int>(type: "int", nullable: false),
-                    Role = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_EmployeeRoles", x => x.Id);
-                });
+            
         }
     }
 }

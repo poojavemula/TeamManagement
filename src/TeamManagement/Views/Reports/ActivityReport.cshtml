@@ -13,6 +13,19 @@
                 </nav> <br /><br />
                 <div class="row">
                     <div class="col-md-12 table-responsive-md">
+                        <form asp-controller="Reports" asp-action="ActivityReport">
+                            <p>
+                                <input type="text" name="empNo" />
+                                <input type="submit" value="Search" />
+
+                            </p>
+                        </form>
+                        @if (@ViewData["empNo"] != null)
+                        {
+                    <h4>You searched for employee @ViewData["empNo"] </h4>
+                        }
+                       
+
                         <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -26,14 +39,14 @@
                             <tbody>
                                 @foreach (var item in Model)
                                 {
-                                <tr>
+                                    <tr>
 
-                                    <td>@item.EmployeeNo</td>
-                                    <td>@item.PropertyName</td>
-                                    <td>@item.PreviousValue</td>
-                                    <td>@item.NewValue</td>
-                                    <td>@item.ModifiedDateTime</td>
-                                </tr>
+                                        <td>@item.EmployeeNo</td>
+                                        <td>@item.PropertyName</td>
+                                        <td>@item.PreviousValue</td>
+                                        <td>@item.NewValue</td>
+                                        <td>@item.ModifiedDateTime</td>
+                                    </tr>
                                 }
                             </tbody>
                         </table>
